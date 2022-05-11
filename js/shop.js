@@ -63,45 +63,41 @@ var cart = [];
 
 var total = 0;
 
-// total = document.getElementById("count_product").content
 
-// window.onload = inicio;
-// function inicio() {
-//   document.getElementById("count_product").onclick = buy;
-// }
 
 // Exercise 1
 function buy(id) {
   // 1. Loop for to the array products to get the item to add to cart
   // 2. Add found product to the cartList array
-  for (let i = 0; i <= products.length; i++) {
+  for (let i = 0; i < products.length; i++) {
     if (i === id) {
       cartList.push(products[id - 1]);
+
     }
   }
+  total = cartList.length;
+
   // ordeno l'array per l'id
   cartList.sort(function (a, b) {
     return (a.id - b.id)
   })
   console.log(cartList);
+  console.log(total);
 }
 
 // Exercise 2
 function cleanCart() {
   cartList.length = 0;
+  total = cartList.length;
 }
 
 // Exercise 3
 function calculateTotal() {
   // Calculate total price of the cart using the "cartList" array
-  let precios = [];
-  for (i in cartList)
-    precios.push(cartList[i].price);
-  console.log(precios);
-  for (let i = 0; i < precios.length; i++) {
-    total = precios[i] + total;
-  }
-  console.log(total);
+  let precioTotal = 0;
+  for (let i = 0; i < cartList.length; i++) {
+    precioTotal = cartList[i].price + precioTotal;
+  } console.log(precioTotal);
 }
 
 // Exercise 4
@@ -121,50 +117,53 @@ function generateCart() {
         return producto;
       });
     }
-  
+
 
     return [...acumulador, valorActual];
   }, []);
 
+
+  cart.subtotal = cart.cantidad * cart.price;
+  cart.subtotalWithDiscount;
   console.log(cart);
 }
 
 
-  
-  // Exercise 5
-  function applyPromotionsCart() {
-    // Apply promotions to each item in the array "cart"
-    for (let i = 0; i <= products.length; i++) {
-      if (cart.id = 1 && cart.cantidad >= 3) {
-        cart.subtotalWithDiscount == 10 * cart.cantidad;
-      } else if (id = 3 && cart.cantidad >= 10) {
-        cart.subtotalWithDiscount = 2 * cart.subtotalWithDiscount / 3;
-      
-      }
+
+// Exercise 5
+function applyPromotionsCart() {
+  // Apply promotions to each item in the array "cart"
+  for (let i = 0; i < products.length; i++) {
+    if (cart.id = 1 && cart.cantidad >= 3) {
+      cart.subtotalWithDiscount == 10 * cart.cantidad;
+    } else if (id = 3 && cart.cantidad >= 10) {
+      cart.subtotalWithDiscount = 2 * cart.subtotalWithDiscount / 3;
+
     }
   }
+}
 
-  // ** Nivell II **
+// ** Nivell II **
 
-  // Exercise 7
-  function addToCart(id) {
-    // Refactor previous code in order to simplify it
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cart array or update its quantity in case it has been added previously.
-  }
+// Exercise 7
+function addToCart(id) {
+  // Refactor previous code in order to simplify it
+  // 1. Loop for to the array products to get the item to add to cart
+  // 2. Add found product to the cart array or update its quantity in case it has been added previously.
+}
 
-  // Exercise 8
-  function removeFromCart(id) {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cartList array
-  }
+// Exercise 8
+function removeFromCart(id) {
+  // 1. Loop for to the array products to get the item to add to cart
+  // 2. Add found product to the cartList array
+}
 
-  // Exercise 9
-  function printCart() {
-    // Fill the shopping cart modal manipulating the shopping cart dom
-  }
+// Exercise 9
+function printCart() {
+  // Fill the shopping cart modal manipulating the shopping cart dom
+}
 
-  function open_modal() {
-    console.log("Open Modal");
-  }
+function open_modal() {
+  console.log("Open Modal");
+}
 

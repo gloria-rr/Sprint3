@@ -1,3 +1,8 @@
+window.onload = iniciar();
+  document.getElementById("btn").addEventListenet('click', validar, false);
+
+
+
 // Get the input fields
 var password = document.querySelector(".password");
 var phone = document.querySelector(".phone");
@@ -7,55 +12,32 @@ var name = document.querySelector(".name");
 var errorPassword = document.getElementById("errorPassword");
 var errorName = document.getElementById("errorName");
 var errorPhone = document.getElementById("errorPhone");
-
+var errorEmail = document.getElementById("errorEmail");
+var form_correcto = true
 // Exercise 6
 function validate() {
+  const expresionEmail = /\w+@\w+\.+[a-z]/;
+  const numerico = /^[0-9]+$/;
+  const texto = /^[a-zA-Z]+$/;
   // Validate fields entered by the user: name, phone, password, and email
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // if (valor == null || valor.length < 3) {
-  //   return false;
-    // valor = document.getElementById("fPhone").value;
-    // if (isNaN(valor)) {
-    //   return false;
-    // }
-//   if (condicion que debe cumplir el primer campo del formulario) {
-//     // Si no se cumple la condicion...
-//     console.log('[ERROR] El campo debe tener un valor de...');
-//     return false;
-//   }
-//   else if (condicion que debe cumplir el segundo campo del formulario) {
-//     // Si no se cumple la condicion...
-//     console.log('[ERROR] El campo debe tener un valor de...');
-//     return false;
-//   }
-//   ...
-//   else if (condicion que debe cumplir el último campo del formulario) {
-//     // Si no se cumple la condicion...
-//     console.log('[ERROR] El campo debe tener un valor de...');
-//     return false;
-//   }
-
-//   // Si el script ha llegado a este punto, todas las condiciones
-//   // se han cumplido, por lo que se devuelve el valor true
-//   return true;
-// }
-
-// }
-
-
-
-
-
+  if (fName === "" || fLastN === "" || fPhone === "" || fPassword === "" || fEmail == "") {
+    form_correcto = false;
+  } else if (fName.value == null || fName.value.length < 3) {
+    form_correcto = false;
+    alert(errorName);
+  } else if (fLastN.value == null || fLastN.value.length < 3) {
+    form_correcto = false;
+    alert(errorName);
+  } else if (isNan(fPhone)) {
+    form_correcto = false;
+    alert(errorPhone);
+  } else if (!expresionEmail.test(fEmail)) {
+    form_correcto = false;
+    alert(errorEmail);
+  } else if (!(numerico.test(fPassword) && texto.test(fPassword))) {
+    form_correcto = false;
+    alert(errorPassword);
+  } else {
+    return true;
+  }
 }
