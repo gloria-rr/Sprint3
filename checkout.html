@@ -120,16 +120,17 @@
           </h3>
         </div>
       </div>
-      <form class="form" onsubmit = "return validar()">
+      <form class="form needs-validation" id="formulario" onsubmit = "return validate()" novalidate>
         <div class="row bord p-5 shadow m-5">
           <div class="col-sm-6">
             <div class="mt-3">
               <label for="fName" class="form-label">First Name:</label>
-              <input
+              <input required
                 id="fName"
                 class="form-control ml-3"
                 type="text"
                 placeholder="First Name"
+                minlength="3"
               />
               <div id="errorName" style.color = "red" class="invalid-feedback">
                 This field is required and must have, at least, 3 characters
@@ -137,7 +138,7 @@
             </div>
             <div class="mt-3">
               <label for="fEmail" class="form-label">Email:</label>
-              <input
+              <input required
                 id="fEmail"
                 class="form-control ml-3"
                 type="email"
@@ -151,7 +152,7 @@
             </div>
             <div class="mt-3">
               <label for="fAddress" class="form-label">Address:</label>
-              <input
+              <input required
                 id="fAddress"
                 class="form-control"
                 type="text"
@@ -166,7 +167,7 @@
           <div class="col-sm-6">
             <div class="mt-3">
               <label for="fLastN" class="form-label">Last Name:</label>
-              <input
+              <input required
                 id="fLastN"
                 class="form-control"
                 type="text"
@@ -179,7 +180,7 @@
             </div>
             <div class="mt-3">
               <label for="fPassword" class="form-label">Password:</label>
-              <input
+              <input required
                 id="fPassword"
                 class="form-control"
                 title="(4-8 characters)"
@@ -194,11 +195,12 @@
             </div>
             <div class="mt-3">
               <label for="fPhone" class="form-label">Phone Number:</label>
-              <input
+              <input required
                 id="fPhone"
                 class="form-control"
                 type="number"
                 placeholder="Phone No."
+                step = "9"
               />
               <div id="errorPhone" class="invalid-feedback">
                 Invalid phone number!! Must be 9 digits with no letters

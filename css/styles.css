@@ -11291,4 +11291,12 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+  color: red;
+}
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+  color:green;
+}
 }

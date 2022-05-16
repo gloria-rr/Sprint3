@@ -72,18 +72,20 @@ function buy(id) {
   for (let i = 0; i < products.length; i++) {
     if (i === id) {
       cartList.push(products[id - 1]);
-
+      total = total + products[id-1].price;
     }
   }
-  total = cartList.length;
-
-  // ordeno l'array per l'id
-  cartList.sort(function (a, b) {
-    return (a.id - b.id)
-  })
   console.log(cartList);
   console.log(total);
-}
+} 
+
+  // ordeno l'array per l'id
+//   cartList.sort(function (a, b) {
+//     return (a.id - b.id)
+//   })
+//   
+//   console.log(total);
+// }
 
 // Exercise 2
 function cleanCart() {
@@ -94,10 +96,10 @@ function cleanCart() {
 // Exercise 3
 function calculateTotal() {
   // Calculate total price of the cart using the "cartList" array
-  let precioTotal = 0;
+  
   for (let i = 0; i < cartList.length; i++) {
-    precioTotal = cartList[i].price + precioTotal;
-  } console.log(precioTotal);
+    total = cartList[i].price + total;
+  } console.log(total);
 }
 
 // Exercise 4
